@@ -1,0 +1,4 @@
+title,slug,excerpt,content,tags,reading_time,cover_image,date,author_id
+Getting Started with Next.js,getting-started-nextjs,Learn how to build a blog with Next.js and Supabase.,<p>This is a full blog post body with HTML or markdown.</p>,"{""Next.js"",""React""}",5,https://via.placeholder.com/800x400.png?text=Next.js+Post,2025-05-29,
+Understanding Supabase RLS,supabase-rls,A deep dive into Supabase's Row Level Security.,<p>RLS lets you control access to your tables with policies.</p>,"{""Supabase"",""Postgres""}",4,https://via.placeholder.com/800x400.png?text=Supabase+Post,2025-05-29,
+Mastering Tailwind CSS,mastering-tailwind-css,Tips and tricks to make the most out of Tailwind CSS.,<p>Tailwind CSS is a utility-first framework for building fast UIs.</p>,"{""Tailwind"",""CSS"",""Frontend""}",6,https://via.placeholder.com/800x400.png?text=Tailwind+CSS+Post,2025-05-29,
