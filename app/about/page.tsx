@@ -87,7 +87,7 @@ export default function AboutPage() {
             <div className="absolute -inset-1 bg-gradient-to-r from-primary via-purple-500 to-pink-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
             <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-background shadow-2xl transform transition-all duration-500 hover:scale-105">
               <Image
-                src="/richky-1.png?height=10&width=10"
+                src="/richky-1.jpg?height=10&width=10"
                 alt="Profile"
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-110"
@@ -186,7 +186,7 @@ export default function AboutPage() {
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary via-purple-500 to-pink-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
                 <div className="relative rounded-2xl overflow-hidden border-2 border-background shadow-2xl transform transition-all duration-500 hover:scale-105">
                   <Image
-                    src="/richky-2.png?height=400&width=800"
+                    src="/richky-2.jpg?height=400&width=800"
                     alt="Professional workspace and office environment"
                     width={600}
                     height={400}
