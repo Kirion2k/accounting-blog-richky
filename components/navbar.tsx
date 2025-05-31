@@ -38,7 +38,7 @@ export default function Navbar() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="text-2xl font-bold tracking-tighter transition-colors hover:text-primary">
-              Modern<span className="text-primary">Blog</span>
+              Acca<span className="text-primary">demy</span>
             </Link>
             <div className="hidden md:flex items-center space-x-6">
               {navItems.map((item) => (
@@ -69,7 +69,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold tracking-tighter transition-colors hover:text-primary">
-            Modern<span className="text-primary">Blog</span>
+            Acca<span className="text-primary">demy</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-6">

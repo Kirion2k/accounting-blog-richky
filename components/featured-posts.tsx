@@ -30,14 +30,14 @@ export default function FeaturedPosts() {
             className={`text-4xl md:text-5xl font-bold tracking-tighter bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent transition-all duration-1000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
               }`}
           >
-            Featured Posts
+            Join us on our Journey
           </h2>
           <p
             className={`text-xl text-muted-foreground transition-all duration-1000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
               }`}
             style={{ transitionDelay: "200ms" }}
           >
-            The latest and greatest from our blog
+            Learn Accounting Concepts Here
           </p>
         </div>
         <Button

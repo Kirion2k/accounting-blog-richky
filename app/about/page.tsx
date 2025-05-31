@@ -87,7 +87,7 @@ export default function AboutPage() {
             <div className="absolute -inset-1 bg-gradient-to-r from-primary via-purple-500 to-pink-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
             <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-background shadow-2xl transform transition-all duration-500 hover:scale-105">
               <Image
-                src="/richky_lim_looking_ahh.jpg?height=320&width=320"
+                src="/richky-1.png?height=10&width=10"
                 alt="Profile"
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-110"
@@ -111,7 +111,7 @@ export default function AboutPage() {
             </div>
 
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-              {["Student", "Professional Nigga", "Financial Advisor", "Business Consultant"].map((skill, index) => (
+              {["Student", "Social Media Influencer", "Financial Advisor", "Business Consultant"].map((skill, index) => (
                 <Badge
                   key={skill}
                   className="px-4 py-2 text-sm font-medium transform transition-all duration-300 hover:scale-110 cursor-default"
@@ -164,19 +164,41 @@ export default function AboutPage() {
 
             <div className="space-y-6 text-lg leading-relaxed">
               <p className="transform transition-all duration-500 hover:translate-x-2">
-                I started this platform to share my expertise in accounting, taxation, and financial planning with
-                business owners and finance professionals. With my CPA certification and extensive experience in
-                corporate finance, I aim to provide practical insights that drive business success.
+                Hey, I’m Richky Lim, the person behind Accademy — a space I created to make learning accounting easier and more relatable.
               </p>
               <p className="transform transition-all duration-500 hover:translate-x-2">
-                When I'm not analyzing financial statements or preparing tax strategies, you can find me consulting with
-                startups, conducting financial workshops, or staying updated with the latest accounting standards and
-                regulations. I believe in empowering businesses through sound financial practices.
+                I’m a student at the University of Auckland, studying Business and Science with a focus on Accounting and Exercise Science. Like many others, I used to find accounting confusing — full of terms and formulas that didn’t really click at first. So I started breaking things down in a way that made sense to me, and figured, why not share that process?
               </p>
               <p className="transform transition-all duration-500 hover:translate-x-2">
-                This blog represents my commitment to financial education and professional development. I hope you find
-                valuable insights here that help optimize your business finances and achieve your financial goals.
+                That’s what Accademy is all about — simplifying concepts, cutting through the noise, and building a space where students can learn accounting in a way that feels less like a lecture and more like a conversation.
               </p>
+              <p className="transform transition-all duration-500 hover:translate-x-2">
+                While I’m still learning myself, everything here is built from genuine interest, research, and a desire to help others who might be feeling just as lost as I was when I started.
+              </p>
+              <p className="transform transition-all duration-500 hover:translate-x-2">
+                If you’re someone who wants to get better at accounting — whether you’re in your first paper or prepping for an exam — I hope this blog gives you a bit more clarity and confidence.
+              </p>
+            </div>
+
+            {/* Professional Workspace Image */}
+            <div className="mt-12">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary via-purple-500 to-pink-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
+                <div className="relative rounded-2xl overflow-hidden border-2 border-background shadow-2xl transform transition-all duration-500 hover:scale-105">
+                  <Image
+                    src="/richky-2.png?height=400&width=800"
+                    alt="Professional workspace and office environment"
+                    width={600}
+                    height={400}
+                    className="object-cover transition-transform duration-700 hover:scale-110 w-full"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <p className="text-lg font-medium">Leo Xu & Richky Lim</p>
+                    <p className="text-sm opacity-90">Where expertise meets innovation in financial services</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -220,9 +242,9 @@ export default function AboutPage() {
               {
                 icon: Instagram,
                 title: "Instagram",
-                value: "@Richkybroe",
+                value: "@richkylim",
                 color: "from-orange-400 to-red-600",
-                href: "https://instagram.com/Richkybroe",
+                href: "https://instagram.com/richkylim",
               },
             ].map((contact) => (
               <Card
