@@ -101,7 +101,12 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         )}
       </div>
 
-      <div className="prose prose-lg dark:prose-invert max-w-none">{post.content}</div>
+      <div className="prose prose-lg dark:prose-invert max-w-none">
+        {post.content.split("\n").map((line: string, idx: number) =>
+          line.trim() ? <p key={idx}>{line}</p> : null
+        )}
+      </div>
+
 
       <Separator />
 

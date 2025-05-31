@@ -37,8 +37,13 @@ export default function Navbar() {
       <nav className="sticky top-0 z-50 w-full backdrop-blur-lg bg-background/80 border-b">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold tracking-tighter transition-colors hover:text-primary">
-              Acca<span className="text-primary">demy</span>
+            <Link href="/" className="text-2xl transition-colors hover:text-primary">
+              <span
+                className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent font-league-spartan"
+                style={{ letterSpacing: "-0.7em" }}
+              >
+                ACCADEMY
+              </span>
             </Link>
             <div className="hidden md:flex items-center space-x-6">
               {navItems.map((item) => (
@@ -68,8 +73,10 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 w-full backdrop-blur-lg bg-background/80 border-b">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold tracking-tighter transition-colors hover:text-primary">
-            Acca<span className="text-primary">demy</span>
+          <Link href="/" className="text-2xl font-bold tracking-wider transition-colors hover:text-primary">
+            <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent font-league-spartan">
+              ACCADEMY
+            </span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-6">
