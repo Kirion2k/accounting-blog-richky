@@ -11,7 +11,7 @@ export default function WavyBackground({ className = "" }: WavyBackgroundProps) 
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const { theme } = useTheme()
   const mouseRef = useRef({ x: 0, y: 0, targetX: 0, targetY: 0 })
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number>(0)
 
   useEffect(() => {
     const canvas = canvasRef.current

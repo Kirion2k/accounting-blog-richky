@@ -54,7 +54,6 @@ export async function createPost(postData: any) {
     videoUrl: postData.videoUrl
   }
 
-  console.log("⤷ inserting into posts:", enriched)
   try {
     const { data, error } = await supabase
       .from("posts")
@@ -87,7 +86,6 @@ export async function updatePost(slug: string, postData: any) {
     author_id: session.user.id,
     videoUrl: postData.videoUrl
   }
-  console.log('↻ updating post:', slug, enriched)
 
   try {
     const { data, error } = await supabase

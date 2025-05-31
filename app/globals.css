@@ -17,6 +17,9 @@ body {
   }
 }
 
+@import "react-quill/dist/quill.snow.css";
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;

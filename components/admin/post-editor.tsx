@@ -1,15 +1,18 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Card } from "@/components/ui/card"
-import { ArrowLeft, Save, ImageIcon } from "lucide-react"
-import { createPost, updatePost } from "@/lib/actions"
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Card } from "@/components/ui/card";
+import { ArrowLeft, Save, ImageIcon } from "lucide-react";
+import { createPost, updatePost } from "@/lib/actions";
+import "quill/dist/quill.snow.css";
+import { useQuill } from "react-quilljs";
+
+
+
 
 interface PostEditorProps {
   post?: any
@@ -19,10 +22,12 @@ export default function PostEditor({ post }: PostEditorProps) {
   const isEditing = !!post
   const router = useRouter()
 
+  // Form state
   const [formData, setFormData] = useState({
     title: post?.title || "",
     slug: post?.slug || "",
     excerpt: post?.excerpt || "",
+    // content holds the HTML string from Quill
     content: post?.content || "",
     coverImage: post?.cover_image || "",
     videoUrl: post?.videoUrl || "",
@@ -30,17 +35,23 @@ export default function PostEditor({ post }: PostEditorProps) {
     date: post?.date || new Date().toISOString().split("T")[0],
   })
 
-  // Separate state for media type selection
-  const [mediaType, setMediaType] = useState<"image" | "video">(post?.videoUrl ? "video" : "image")
+  // Toggle between image vs. video input
+  const [mediaType, setMediaType] = useState<"image" | "video">(
+    post?.videoUrl ? "video" : "image"
+  )
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState("")
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  // Handle text inputs
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
+  // Switch between “Cover Image” and “YouTube Video”
   const handleMediaTypeChange = (type: "image" | "video") => {
     setMediaType(type)
     if (type === "image") {
@@ -50,14 +61,61 @@ export default function PostEditor({ post }: PostEditorProps) {
     }
   }
 
+  // ------------- QUILL SETUP -------------
+  // Define toolbar options: headings, bold, italic, underline, link, lists, clean
+  const quillModules = {
+    toolbar: [
+      [{ header: [1, 2, 3, false] }], // H1, H2, H3, Normal
+      ["bold", "italic", "underline"], // Bold, Italic, Underline
+      ["link"],
+      [{ list: "ordered" }, { list: "bullet" }],
+      ["clean"],
+    ],
+  }
+  const quillFormats = [
+    "header",
+    "bold",
+    "italic",
+    "underline",
+    "link",
+    "list",
+  ]
+
+  // Create the editor instance
+  const { quill, quillRef } = useQuill({
+    theme: "snow",
+    modules: quillModules,
+    formats: quillFormats,
+  })
+
+  // When Quill instance is ready, sync HTML <-> state
+  useEffect(() => {
+    if (quill) {
+      // If editing an existing post, set its HTML into Quill on mount
+      if (isEditing) {
+        quill.root.innerHTML = formData.content
+      }
+
+      // Whenever Quill content changes, update formData.content
+      quill.on("text-change", () => {
+        setFormData((prev) => ({
+          ...prev,
+          content: quill.root.innerHTML,
+        }))
+      })
+    }
+  }, [quill])
+
+  // ------------- FORM SUBMIT -------------
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
     setError("")
 
-    // 🚫 Slug validation: no spaces allowed
+    // 🚫 Slug validation (no spaces)
     if (/\s/.test(formData.slug)) {
       setError("Slug can’t contain spaces. Use hyphens or underscores instead.")
+      setIsSubmitting(false)
       return
     }
 
@@ -66,7 +124,7 @@ export default function PostEditor({ post }: PostEditorProps) {
         ...formData,
         tags: formData.tags
           .split(",")
-          .map((tag: string) => tag.trim())
+          .map((t: string) => t.trim())
           .filter(Boolean),
       }
 
@@ -100,10 +158,15 @@ export default function PostEditor({ post }: PostEditorProps) {
         </Button>
       </div>
 
-      {error && <div className="p-3 text-sm bg-destructive/10 text-destructive rounded-md">{error}</div>}
+      {error && (
+        <div className="p-3 text-sm bg-destructive/10 text-destructive rounded-md">
+          {error}
+        </div>
+      )}
 
       <form onSubmit={handleSubmit} className="space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* ───────── LEFT COLUMN ───────── */}
           <div className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="title">Title</Label>
@@ -131,13 +194,14 @@ export default function PostEditor({ post }: PostEditorProps) {
 
             <div className="space-y-2">
               <Label htmlFor="excerpt">Excerpt</Label>
-              <Textarea
+              <textarea
                 id="excerpt"
                 name="excerpt"
                 value={formData.excerpt}
                 onChange={handleChange}
                 placeholder="Brief summary of the post"
                 rows={3}
+                className="w-full rounded-md border px-3 py-2"
                 required
               />
             </div>
@@ -164,6 +228,8 @@ export default function PostEditor({ post }: PostEditorProps) {
                 required
               />
             </div>
+
+            {/* Media Type Toggle */}
             <div className="space-y-3">
               <Label>Media Type</Label>
               <div className="flex gap-4">
@@ -176,6 +242,7 @@ export default function PostEditor({ post }: PostEditorProps) {
                   <ImageIcon className="h-4 w-4" />
                   <span>Cover Image</span>
                 </Button>
+
                 <Button
                   type="button"
                   variant={mediaType === "video" ? "default" : "outline"}
@@ -191,6 +258,7 @@ export default function PostEditor({ post }: PostEditorProps) {
             </div>
           </div>
 
+          {/* ───────── RIGHT COLUMN ───────── */}
           <div className="space-y-4">
             {mediaType === "image" ? (
               <div className="space-y-2">
@@ -250,16 +318,15 @@ export default function PostEditor({ post }: PostEditorProps) {
             )}
           </div>
         </div>
+
+        {/* ───────── RICH‐TEXT EDITOR ───────── */}
         <div className="space-y-2">
           <Label htmlFor="content">Content</Label>
-          <Textarea
-            id="content"
-            name="content"
-            value={formData.content}
-            onChange={handleChange}
-            placeholder="Write your post content here..."
-            className="min-h-[300px]"
-            required
+          {/* Render a <div> container bound to quillRef */}
+          <div
+            ref={quillRef}
+            style={{ minHeight: "300px", backgroundColor: "white" }}
+            className="rounded-md border"
           />
         </div>
 
