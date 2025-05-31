@@ -77,7 +77,7 @@ export default function FeaturedPosts() {
                     />
                   ) : (
                     <Image
-                      src={post.coverImage || "/placeholder.svg?height=400&width=600"}
+                      src={post.cover_image || "/placeholder.svg?height=400&width=600"}
                       alt={post.title}
                       fill
                       className="object-cover transition-all duration-700 group-hover:scale-110"
