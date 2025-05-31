@@ -51,6 +51,7 @@ export async function createPost(postData: any) {
     cover_image: postData.coverImage,
     date: postData.date,
     author_id: session.user.id,
+    videoUrl: postData.videoUrl
   }
 
   console.log("⤷ inserting into posts:", enriched)
@@ -84,6 +85,7 @@ export async function updatePost(slug: string, postData: any) {
     cover_image: postData.coverImage,
     date: postData.date,
     author_id: session.user.id,
+    videoUrl: postData.videoUrl
   }
   console.log('↻ updating post:', slug, enriched)
 

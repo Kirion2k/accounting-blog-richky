@@ -67,12 +67,22 @@ export default function FeaturedPosts() {
               <Card className="overflow-hidden h-full transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:-translate-y-2 border-0 bg-gradient-to-br from-background to-muted/20">
                 <div className="relative h-48 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <Image
-                    src={post.cover_image || "/placeholder.svg?height=400&width=600"}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-all duration-700 group-hover:scale-110"
-                  />
+
+                  {post.videoUrl ? (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${post.videoUrl.split("v=")[1]?.split("&")[0] || ""}`}
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      allowFullScreen
+                      title={post.title}
+                    />
+                  ) : (
+                    <Image
+                      src={post.coverImage || "/placeholder.svg?height=400&width=600"}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-all duration-700 group-hover:scale-110"
+                    />
+                  )}
                   <div className="absolute top-4 right-4 z-20">
                     <Badge className="bg-background/90 text-foreground backdrop-blur-sm border-0 shadow-lg">
                       <Clock className="w-3 h-3 mr-1" />

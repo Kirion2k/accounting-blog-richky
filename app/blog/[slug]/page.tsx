@@ -89,7 +89,16 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       </div>
 
       <div className="relative aspect-video overflow-hidden rounded-lg">
-        <Image src={post.cover_image || "/placeholder.svg"} alt={post.title} fill className="object-cover" priority />
+        {post.videoUrl ? (
+          <iframe
+            src={`https://www.youtube.com/embed/${post.videoUrl.split("v=")[1]?.split("&")[0] || ""}`}
+            className="w-full h-full"
+            allowFullScreen
+            title={post.title}
+          />
+        ) : (
+          <Image src={post.coverImage || "/placeholder.svg"} alt={post.title} fill className="object-cover" priority />
+        )}
       </div>
 
       <div className="prose prose-lg dark:prose-invert max-w-none">{post.content}</div>
