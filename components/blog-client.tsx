@@ -110,17 +110,17 @@ export default function BlogClient({ posts }: BlogClientProps) {
         <section className="text-center space-y-8 py-16">
           <div className="space-y-8 max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient leading-tight pb-4">
-              Financial Insights
+              Learning Accounting
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Expert accounting advice, tax strategies, and business financial guidance from certified professionals
+              Learn accounting basics, tax concepts, and financial strategies to build your confidence with numbers, all explained in a way that’s clear, practical, and beginner-friendly.
             </p>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto pt-8">
             {[
-              { icon: TrendingUp, label: "Expert Articles", value: posts.length, color: "text-blue-500" },
+              { icon: TrendingUp, label: "Helpful Articles", value: posts.length, color: "text-blue-500" },
               { icon: Eye, label: "Professional Reads", value: formatNumber(totalProfessionalReads), color: "text-green-500" },
               { icon: Clock, label: "Avg. Read", value: `${avgReadTime} min`, color: "text-purple-500" },
             ].map((stat, index) => (

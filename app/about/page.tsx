@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Mail, Twitter, Instagram, Linkedin, MapPin, Calendar, PhoneCallIcon } from "lucide-react"
+import { Mail, Twitter, Instagram, Linkedin, MapPin, Calendar, PhoneCallIcon, YoutubeIcon } from "lucide-react"
 
 export default function AboutPage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -70,13 +70,6 @@ export default function AboutPage() {
               About Me
             </h1>
           </div>
-          <p
-            className={`text-xl md:text-2xl text-muted-foreground transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-            style={{ transitionDelay: "200ms" }}
-          >
-            The financial expert behind the insights
-          </p>
         </div>
       </section>
 
@@ -123,7 +116,7 @@ export default function AboutPage() {
 
             <div className="flex gap-4 justify-center lg:justify-start">
               <a
-                href="mailto:richkylim@gmail.com"
+                href="mailto:richky.lim@icloud.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -221,9 +214,9 @@ export default function AboutPage() {
               {
                 icon: Mail,
                 title: "Email",
-                value: "richkylim@gmail.com",
+                value: "richky.lim@icloud.com",
                 color: "from-yellow-300 to-yellow-600",
-                href: "mailto:richkylim@gmail.com",
+                href: "mailto:richky.lim@icloud.com",
               },
               {
                 icon: Linkedin,
@@ -233,11 +226,11 @@ export default function AboutPage() {
                 href: "https://linkedin.com/in/richky-lim-7b979831a/",
               },
               {
-                icon: PhoneCallIcon,
-                title: "Phone Number",
-                value: "+64 2108955788",
-                color: "from-green-400 to-emerald-600",
-                href: "tel:+642108955788",
+                icon: YoutubeIcon,
+                title: "Youtube",
+                value: "youtube.com/richkylim_",
+                color: "from-red-400 to-red-600",
+                href: "https://www.youtube.com/@richkylim_",
               },
               {
                 icon: Instagram,

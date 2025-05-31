@@ -63,7 +63,7 @@ export default function Home() {
             >
               <Link href="/about">
                 <UsersIcon className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
-                About the Expert
+                About
               </Link>
             </Button>
           </div>
