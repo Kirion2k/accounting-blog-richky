@@ -129,10 +129,10 @@ export default function FeaturedPosts() {
                       day: "numeric",
                     })}
                   </div>
-                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                  {/* <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                     <Eye className="h-4 w-4" />
                     <span>{post.views}</span>
-                  </div>
+                  </div> */}
                 </CardFooter>
               </Card>
             </Link>

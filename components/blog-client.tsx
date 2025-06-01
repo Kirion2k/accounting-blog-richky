@@ -296,10 +296,10 @@ export default function BlogClient({ posts }: BlogClientProps) {
                           </span>
                         </div>
                         <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                          <div className="flex items-center space-x-1">
+                          {/* <div className="flex items-center space-x-1">
                             <Eye className="h-4 w-4" />
                             <span>{post.views}</span>
-                          </div>
+                          </div> */}
                           <div className="flex items-center space-x-1">
                             <User className="h-4 w-4" />
                             <span>Richky L.</span>
