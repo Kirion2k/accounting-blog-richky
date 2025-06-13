@@ -27,9 +27,9 @@ export default function Home() {
               className={`relative text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
             >
-              Welcome to{" "}
+              Welcome to{"   "}
               <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
-                Accademy
+                Ledgr
               </span>
             </h1>
           </div>
@@ -40,7 +40,7 @@ export default function Home() {
             style={{ transitionDelay: "200ms" }}
           >
             An easier way to learn accounting.<br /><br />
-            Accademy is our attempt at making accounting easier to learn. Accademy is digestible, simplified, and made to be understood. Our goal is to learn with you, as we attempt to teach the subject in an easier format.<br /><br />
+            Ledgr is our attempt at making accounting easier to learn. Ledgr is digestible, simplified, and made to be understood. Our goal is to learn with you, as we attempt to teach the subject in an easier format.<br /><br />
           </p>
 
           <div

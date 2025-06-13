@@ -104,7 +104,7 @@ export default function AboutPage() {
             </div>
 
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-              {["Student", "Social Media Influencer", "Financial Advisor", "Business Consultant"].map((skill, index) => (
+              {["Student", "Social Media Influencer"].map((skill, index) => (
                 <Badge
                   key={skill}
                   className="px-4 py-2 text-sm font-medium transform transition-all duration-300 hover:scale-110 cursor-default"
@@ -157,13 +157,13 @@ export default function AboutPage() {
 
             <div className="space-y-6 text-lg leading-relaxed">
               <p className="transform transition-all duration-500 hover:translate-x-2">
-                Hey, I’m Richky Lim, the person behind Accademy — a space I created to make learning accounting easier and more relatable.
+                Hey, I’m Richky Lim, the person behind Ledgr — a space I created to make learning accounting easier and more relatable.
               </p>
               <p className="transform transition-all duration-500 hover:translate-x-2">
                 I’m a student at the University of Auckland, studying Business and Science with a focus on Accounting and Exercise Science. Like many others, I used to find accounting confusing — full of terms and formulas that didn’t really click at first. So I started breaking things down in a way that made sense to me, and figured, why not share that process?
               </p>
               <p className="transform transition-all duration-500 hover:translate-x-2">
-                That’s what Accademy is all about — simplifying concepts, cutting through the noise, and building a space where students can learn accounting in a way that feels less like a lecture and more like a conversation.
+                That’s what Ledger is all about — simplifying concepts, cutting through the noise, and building a space where students can learn accounting in a way that feels less like a lecture and more like a conversation.
               </p>
               <p className="transform transition-all duration-500 hover:translate-x-2">
                 While I’m still learning myself, everything here is built from genuine interest, research, and a desire to help others who might be feeling just as lost as I was when I started.

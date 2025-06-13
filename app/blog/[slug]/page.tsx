@@ -76,14 +76,14 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         <h1 className="text-4xl font-bold tracking-tighter">{post.title}</h1>
 
         <div className="flex items-center text-sm text-muted-foreground">
-          <time dateTime={post.date}>
+          {/* <time dateTime={post.date}>
             {new Date(post.date).toLocaleDateString("en-US", {
               year: "numeric",
               month: "long",
               day: "numeric",
             })}
           </time>
-          <span className="mx-2">•</span>
+          <span className="mx-2">•</span> */}
           <span>{post.reading_time} min read</span>
         </div>
       </div>

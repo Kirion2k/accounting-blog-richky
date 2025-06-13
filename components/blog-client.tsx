@@ -286,14 +286,17 @@ export default function BlogClient({ posts }: BlogClientProps) {
 
                       <CardFooter className="flex justify-between items-center pt-0">
                         <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                          <Calendar className="h-4 w-4" />
-                          <span>
+                          {/* <Calendar className="h-4 w-4" /> */}
+                          {/* <span>
                             {new Date(post.date).toLocaleDateString("en-US", {
                               year: "numeric",
                               month: "short",
                               day: "numeric",
                             })}
-                          </span>
+                          </span> */}
+                          <p className="text-muted-foreground line-clamp-2 group-hover:text-foreground transition-colors duration-300">
+                            Read more...
+                          </p>
                         </div>
                         <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                           {/* <div className="flex items-center space-x-1">

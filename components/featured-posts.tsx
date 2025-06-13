@@ -122,17 +122,20 @@ export default function FeaturedPosts() {
                 </CardContent>
 
                 <CardFooter className="flex justify-between items-center pt-0">
-                  <div className="text-sm text-muted-foreground">
+                  {/* <div className="text-sm text-muted-foreground">
                     {new Date(post.date).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "short",
                       day: "numeric",
                     })}
-                  </div>
-                  {/* <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                    <Eye className="h-4 w-4" />
-                    <span>{post.views}</span>
                   </div> */}
+                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                    <p className="text-muted-foreground line-clamp-2 group-hover:text-foreground transition-colors duration-300">
+                      Read more...
+                    </p>
+                    {/* <Eye className="h-4 w-4" />
+                    <span>{post.views}</span> */}
+                  </div>
                 </CardFooter>
               </Card>
             </Link>

@@ -42,7 +42,7 @@ export default function Navbar() {
                 className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent font-league-spartan"
                 style={{ letterSpacing: "-0.7em" }}
               >
-                ACCADEMY
+                Ledgr
               </span>
             </Link>
             <div className="hidden md:flex items-center space-x-6">
@@ -75,7 +75,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold tracking-wider transition-colors hover:text-primary">
             <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent font-league-spartan">
-              ACCADEMY
+              LEDGR
             </span>
           </Link>
 
